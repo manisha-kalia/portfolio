@@ -1,0 +1,17 @@
+---
+layout: default
+---
+{%- include header.html -%}
+<div id="main">
+  <div class="container" style="padding-top:16px;">
+    <article class="role-hero" style="background:white;border:1px solid var(--border);border-radius:16px;padding:32px;">
+      <header>
+        <h1 style="margin:0;">{{ page.title }}</h1>
+        {%- if page.subtitle -%}<p style="color:var(--text-2);margin-top:8px;">{{ page.subtitle }}</p>{%- endif -%}
+      </header>
+      <div style="margin-top:20px;">
+        {{ content }}
+      </div>
+    </article>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<ul class="icons" style="display:flex;gap:4px;list-style:none;margin:0;padding:0;">
+  {%- if site.linkedin_url -%}<li><a href="{{ site.linkedin_url }}" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>{%- endif -%}
+  {%- if site.github_url -%}<li><a href="{{ site.github_url }}" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a></li>{%- endif -%}
+  {%- if site.kaggle_url -%}<li><a href="{{ site.kaggle_url }}" target="_blank" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a></li>{%- endif -%}
+  {%- if site.leetcode_url -%}<li><a href="{{ site.leetcode_url }}" target="_blank" aria-label="LeetCode" style="font-size:13px;font-weight:800;line-height:1;padding:6px;display:inline-flex;align-items:center;justify-content:center;min-width:28px;min-height:28px;">LC</a></li>{%- endif -%}
+  {%- if site.calendar_url -%}<li><a href="{{ site.calendar_url }}" target="_blank" aria-label="Schedule"><i class="fas fa-calendar-alt"></i></a></li>{%- endif -%}
+  {%- if site.email -%}<li><a href="mailto:{{ site.email }}" aria-label="Email"><i class="fas fa-envelope"></i></a></li>{%- endif -%}
+</ul>

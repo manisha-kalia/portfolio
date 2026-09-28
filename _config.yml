@@ -1,0 +1,55 @@
+# Site settings — Manisha Kalia portfolio
+title: Manisha Kalia
+subtitle: Mathematics • Computer Science • Aspiring Computational Linguist
+description: >-
+  B.Sc. Computer Science (IISU Jaipur), B.Ed & M.A. — maths, programming and
+  language foundations for graduate study in Computational Linguistics, NLP and Data Science.
+  First Division ×4 • RAS Prelims cleared twice • REET qualified.
+author: Manisha Kalia
+email: myrj07@gmail.com
+avatar: assets/images/profile.jpg
+
+# Site URLs — project site under the portfolio repo
+baseurl: "/portfolio"
+url: "https://manisha-kalia.github.io"
+
+# Social — icons render only for URLs present below.
+# Add a line when the account exists; keep commented until then.
+github_url: https://github.com/manisha-kalia
+# linkedin_url: https://www.linkedin.com/in/
+# kaggle_url: https://www.kaggle.com/
+# leetcode_url: https://leetcode.com/u/
+# dev_url: https://dev.to/
+# twitter_url: https://twitter.com/
+portfolio_url: https://manisha-kalia.github.io/portfolio
+
+# Analytics (optional) — add a GA4 id to enable tracking
+# google_analytics: G-XXXXXXXXXX
+
+# Build
+future: true
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Theme - keep Prologue base but we override with custom CSS
+remote_theme: chrisbobbe/jekyll-theme-prologue
+collections: [sections]
+
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+# Defaults for role pages
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"

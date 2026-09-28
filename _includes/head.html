@@ -1,0 +1,52 @@
+<head>
+  {%- if site.google_analytics and jekyll.environment == 'production' -%}
+    {%- include google_analytics.html -%}
+  {%- endif -%}
+
+  <meta name="robots" content="{{- page.robots | default: 'index, follow' -}}" />
+  {%- unless page.canonical == false -%}
+  <link rel="canonical" href="{{- page.url | absolute_url -}}" />
+  {%- endunless -%}
+
+  {%- capture _page_title -%}
+    {%- if page.title -%}{{- page.title | append: ' | ' -}}{%- endif -%}{{- site.title | default: "Untitled Website" -}}
+    {%- if site.subtitle and page.layout == 'home' -%}{{- site.subtitle | prepend: ' — ' -}}{%- endif -%}
+  {%- endcapture -%}
+  {%- assign _page_title = _page_title | escape -%}
+  {%- assign _page_description = page.description | default: site.description | default: _page_title | escape -%}
+
+  <title>{{- _page_title -}}</title>
+  <meta name="description" content="{{- _page_description -}}" />
+  <meta name="author" content="{{- site.author -}}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{- _page_title -}}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{{- site.avatar | absolute_url -}}" />
+  <meta property="og:url" content="{{- page.url | absolute_url -}}" />
+  <meta property="og:site_name" content="{{- site.title | escape -}}" />
+  <meta property="og:description" content="{{- _page_description -}}" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+
+  <!-- Styles (v=1 cache bust for fresh site) -->
+  <link rel="stylesheet" href="{{- 'assets/css/main.css?v=1' | relative_url -}}" />
+
+  <!-- Jekyll SEO -->
+  {% seo %}
+
+  <!-- Service Worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("{{ '/service-worker.js' | relative_url }}");
+      });
+    }
+  </script>
+</head>

@@ -1,0 +1,25 @@
+{%- comment -%} Modern top header — overrides Prologue sidebar {%- endcomment -%}
+<div id="header">
+  <div class="top">
+    <div id="logo">
+      <a href="{{ '/' | relative_url }}" style="display:flex;align-items:center;gap:12px;border:none;text-decoration:none;">
+        <span class="image avatar48">MK</span>
+        <span>
+          <h1 id="title" style="margin:0;">{{ site.title }}</h1>
+          <p style="margin:0;">Portfolio • Jaipur, India</p>
+        </span>
+      </a>
+    </div>
+    <nav id="nav">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}><span>Home</span></a></li>
+        <li><a href="{{ '/about' | relative_url }}" {% if page.url contains 'about' %}class="active"{% endif %}><span>About</span></a></li>
+        <li><a href="{{ '/certificates' | relative_url }}" {% if page.url contains 'certificates' %}class="active"{% endif %}><span>Certificates</span></a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="bottom" style="display:flex;gap:12px;align-items:center;">
+    {%- include social_icons.html -%}
+    <a href="{{ 'assets/resume/ManishaKaliaResume.pdf' | relative_url }}" target="_blank" class="btn btn-dark" style="padding:8px 14px;font-size:12px;">Resume</a>
+  </div>
+</div>
