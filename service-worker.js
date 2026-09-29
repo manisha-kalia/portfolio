@@ -18,12 +18,12 @@ importScripts(
 // // let Workbox handle our precache list
 // workbox.precaching.precacheAndRoute(self.__precacheManifest);
 
-// Bump v1 forces cache bust for main.css?v=1
+// Bump v2 forces cache bust for main.css?v=2
 if (workbox) {
   workbox.routing.registerRoute(
     /\.(?:js|css)$/,
     new workbox.strategies.StaleWhileRevalidate({
-      cacheName: "static-resources-v1",
+      cacheName: "static-resources-v2",
     })
   );
 
